@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .con {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .tou {
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            background: #a7cbff;
+        }
+        .tou button {
+            float: left;
+        }
+        .tou .ret {
+            float: right;
+        }
+    </style>
+   
+</head>
+<body>
+<div class="con">投票内容</div>
+<div class="tou">
+    <button onclick="vote(this)">投票</button>
+    <span class="ret">总票数：<span id="total">2</span></span>
+</div>
+<script type="text/javascript">
+    	console.log(document.getElementById("total").innerHTML);
+function vote(e){
+	// console.log(document.getElementById('total'));
+    var oldTotal=parseInt(document.getElementById("total").innerHTML);
+    console.log(oldTotal);
+   
+   document.getElementById("total").innerHTML=(oldTotal+1) ;
+   e.setAttribute("disabled","disabled");
+   setTimeout(function (e){
+    document.getElementsByTagName("button")[0].disabled=false;
+},10000)
+}
+        // 定义vote函数，计算票数
+
+        // 定义disabled函数，禁用投票按钮
+       
+
+    </script>
+</body>
+</html>
